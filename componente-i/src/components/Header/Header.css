@@ -1,0 +1,8 @@
+.Header {
+    display: flex;
+    min-height: 20vh;
+    background-color: darkcyan;
+    width: 100%;
+    justify-content: center;
+    
+}
