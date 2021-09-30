@@ -2,76 +2,28 @@ import React from 'react'
 import { Button, Card, Image } from 'semantic-ui-react'
 import './ItemCardItems.css';
 
-const ItemCardItems = () => (
-  <Card.Group>
+const ItemCardItems = (props) => (
+  <Card.Group className='ItemCardItems'>
   <Card>
     <Card.Content>
       <Image
         floated='right'
         size='mini'
-        src='https://react.semantic-ui.com/images/avatar/large/steve.jpg'
+        src={props.img}
       />
-      <Card.Header>Steve Sanders</Card.Header>
-      <Card.Meta>Friends of Elliot</Card.Meta>
+      <Card.Header>{props.item}</Card.Header>
+      <Card.Meta>{props.category}</Card.Meta>
       <Card.Description>
-        Steve wants to add you to the group <strong>best friends</strong>
+        {props.description}
       </Card.Description>
     </Card.Content>
     <Card.Content extra>
       <div className='ui two buttons'>
         <Button basic color='green'>
-          Approve
+          Agregar a carrito
         </Button>
         <Button basic color='red'>
-          Decline
-        </Button>
-      </div>
-    </Card.Content>
-  </Card>
-  <Card>
-    <Card.Content>
-      <Image
-        floated='right'
-        size='mini'
-        src='https://react.semantic-ui.com/images/avatar/large/molly.png'
-      />
-      <Card.Header>Molly Thomas</Card.Header>
-      <Card.Meta>New User</Card.Meta>
-      <Card.Description>
-        Molly wants to add you to the group <strong>musicians</strong>
-      </Card.Description>
-    </Card.Content>
-    <Card.Content extra>
-      <div className='ui two buttons'>
-        <Button basic color='green'>
-          Approve
-        </Button>
-        <Button basic color='red'>
-          Decline
-        </Button>
-      </div>
-    </Card.Content>
-  </Card>
-  <Card>
-    <Card.Content>
-      <Image
-        floated='right'
-        size='mini'
-        src='https://react.semantic-ui.com/images/avatar/large/jenny.jpg'
-      />
-      <Card.Header>Jenny Lawrence</Card.Header>
-      <Card.Meta>New User</Card.Meta>
-      <Card.Description>
-        Jenny requested permission to view your contact details
-      </Card.Description>
-    </Card.Content>
-    <Card.Content extra>
-      <div className='ui two buttons'>
-        <Button basic color='green'>
-          Approve
-        </Button>
-        <Button basic color='red'>
-          Decline
+          Agregar a Favoritos
         </Button>
       </div>
     </Card.Content>
