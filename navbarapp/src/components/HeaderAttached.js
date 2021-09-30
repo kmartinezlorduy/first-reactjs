@@ -1,13 +1,13 @@
 import React from 'react'
 import { Header, Segment } from 'semantic-ui-react'
 
-const HeaderAttached = () => (
+const HeaderAttached = (props) => (
   <div>
     <Header as='h2' attached='top'>
       Lista de productos
     </Header>
     <Segment attached>
-      A continuación encuentra la lista de productos disponibles
+      {props.message}
     </Segment>
   </div>
 )

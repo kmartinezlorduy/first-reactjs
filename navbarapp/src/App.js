@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <NavBar/>
-      <HeaderAttached/>
+      <HeaderAttached message='Bienvenidos, a continuación nuestra lista de productos'/>
       <ItemCardItems/>
     </div>
   );
