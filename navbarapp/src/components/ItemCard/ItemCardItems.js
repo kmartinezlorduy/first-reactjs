@@ -1,9 +1,10 @@
 import React from 'react'
 import { Button, Card, Image } from 'semantic-ui-react'
 import './ItemCardItems.css';
+import ItemCounter from '../ItemCount/ItemCount'
 
 const ItemCardItems = (props) => (
-  <Card.Group className='ItemCardItems'>
+  <Card.Group className='ItemCard'>
   <Card>
     <Card.Content>
       <Image
@@ -17,16 +18,10 @@ const ItemCardItems = (props) => (
         {props.description}
       </Card.Description>
     </Card.Content>
-    <Card.Content extra>
-      <div className='ui two buttons'>
-        <Button basic color='green'>
-          Agregar a carrito
-        </Button>
-        <Button basic color='red'>
-          Agregar a Favoritos
-        </Button>
-      </div>
+    <Card.Content extra>      
+      <ItemCounter stock={props.stock}></ItemCounter>
     </Card.Content>
+    
   </Card>
 </Card.Group>
 )
