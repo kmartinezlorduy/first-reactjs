@@ -3,8 +3,8 @@ import { Button, Card, Image } from 'semantic-ui-react'
 
 
 const ItemCounter = (props) => {
-    const [rowCount, setRowCount] = useState(0);
-    const [stock, setStock] = useState(props.stock);
+    const [rowCount, setRowCount] = useState(parseInt(props.reserve));
+    const [stock, setStock] = useState(parseInt(props.stock));
 
     // useEffect(() => {
     //   setTimeout(() => {
@@ -12,6 +12,15 @@ const ItemCounter = (props) => {
     //     setRowCount(1000);
     //   }, 10000);
     // }, []);
+
+    const handleClickAddItem = () => {
+      rowCount < stock ? setRowCount(rowCount + 1): alert('No hay stock disponible');
+    }
+
+    const handleClickRemoveItem = () => {
+      rowCount > 0 ? setRowCount(rowCount - 1) : alert('No es posible quitar mas de carrito')
+    }
+
 
     return (
       <div>
@@ -21,10 +30,10 @@ const ItemCounter = (props) => {
       </div>
       <div className='ui three buttons'>
         
-        <Button basic color='green' onClick={() => rowCount < stock ? setRowCount(rowCount + 1): console.log('No hay stock disponible')}>
+        <Button basic color='green' onClick={handleClickAddItem}>
         Agregar a carrito
         </Button>
-        <Button basic color='red' onClick={() => rowCount > 0 ? setRowCount(rowCount - 1) : console.log('No es posible quitar mas de carrito')}>
+        <Button basic color='red' onClick={handleClickRemoveItem}>
         Quitar de carrito
         </Button>
         <Button basic color='blue'>

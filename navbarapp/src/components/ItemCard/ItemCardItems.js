@@ -19,7 +19,7 @@ const ItemCardItems = (props) => (
       </Card.Description>
     </Card.Content>
     <Card.Content extra>      
-      <ItemCounter stock={props.stock}></ItemCounter>
+      <ItemCounter stock={props.stock} reserve={props.reserve} ></ItemCounter>
     </Card.Content>
     
   </Card>
