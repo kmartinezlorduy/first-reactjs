@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import ItemCardItems from '../ItemCard/ItemCardItems'
 import '../ItemCard/ItemCardItems.css';
 import { Header, Segment } from 'semantic-ui-react'
+import {Link} from 'react-router-dom';
 
 
 
@@ -28,14 +29,18 @@ const ItemListContainer = (props) => {
 
       {products.map((product) => {
           return (
-            <ItemCardItems
-              img={product.img}
-              item={product.item}
-              category={product.category}
-              description={product.description}
-              reserve={product.reserve}
-              stock={product.stock}>
-          </ItemCardItems>
+            <div key={product.id}>
+              <Link to={`/detail/${product.id}`} >
+                <ItemCardItems
+                  img={product.img}
+                  item={product.item}
+                  category={product.category}
+                  description={product.description}
+                  reserve={product.reserve}
+                  stock={product.stock}>
+                </ItemCardItems>
+              </Link>
+            </div>
           );
         })}
 
