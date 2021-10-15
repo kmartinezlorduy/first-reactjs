@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import ItemCardItems from '../../components/ItemCard/ItemCardItems'
 import '../../components/ItemCard/ItemCardItems.css';
 import { Header, Segment } from 'semantic-ui-react'
-
+//Import
 const CardDetail = ({ match }) => {
 
     const [product, setProduct] = useState({});
@@ -20,8 +20,8 @@ const CardDetail = ({ match }) => {
             {
                
                     <div>
-                            <ItemCardItems
-                                img={product.img}
+                             <ItemCardItems
+                                 img={product.img}
                                 item={product.item}
                                 category={product.category}
                                 description={product.description}
