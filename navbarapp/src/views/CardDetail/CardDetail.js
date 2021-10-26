@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import ItemCardItems from '../../components/ItemCard/ItemCardItems'
+import ItemCardItemsDetail from '../../components/ItemCard/ItemCardItemsDetail'
 import '../../components/ItemCard/ItemCardItems.css';
 import { Header, Segment } from 'semantic-ui-react'
 //Import
@@ -20,14 +20,15 @@ const CardDetail = ({ match }) => {
             {
                
                     <div>
-                             <ItemCardItems
-                                 img={product.img}
+                            <ItemCardItemsDetail
+                                img={product.img}
                                 item={product.item}
                                 category={product.category}
                                 description={product.description}
+                                price={product.price}
                                 reserve={product.reserve}
                                 stock={product.stock}>
-                            </ItemCardItems>
+                            </ItemCardItemsDetail>
                     </div>
           
             }

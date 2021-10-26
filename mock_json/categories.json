@@ -1,4 +1,28 @@
 {
+"categories": [
+    {
+      "id": "vg",
+      "text": "Video juegos",
+      "description": "Video juegos",
+      "image": "https://images.vexels.com/media/users/3/217118/isolated/preview/76ff9b915123c0b380f46e53c9479639-ilustracion-de-controlador-de-consola-de-oldschool.png" 
+    },    
+    { "id": "pt",
+    "text": "Portatiles",
+    "description": "Equipos portatiles",
+    "image": "https://pngimg.com/uploads/laptop/laptop_PNG101763.png" 
+    },    
+    { "id": "cl",
+    "text": "Celulares",
+    "description": "Dispositivos moviles",
+    "image": "https://celuclock.com.co/wp-content/uploads/2020/12/Puro-0-3-Nude-TPU-Case-for-iPhone-12-Pro-Max-Transparent-8033830296208-16102020-01-p.jpg" 
+    },    
+    { "id": "ac",
+    "text": "Accesorios",
+    "description": "Accesorios PC",
+    "image": "https://eternalarcade.com/wp-content/uploads/2019/09/Mejores-accesorios-gaming.jpg" 
+    }
+  ]
+,
     "products": [{
         "id": "1",
         "item": "Playstation 5",

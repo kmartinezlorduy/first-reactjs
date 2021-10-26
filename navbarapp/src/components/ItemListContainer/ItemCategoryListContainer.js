@@ -8,14 +8,15 @@ import {Link} from 'react-router-dom';
 
 
 
-const ItemListContainer = (props) => {
+const ItemCategoryListContainer = ({ match }) => {
 
   const [products, setProducts] = useState([]);
 
-
+  //let categoryId = match.params.id;
+  
 
   useEffect(() => {
-    fetch('http://localhost:3001/products')
+    fetch(`http://localhost:3001/products`)
     .then((response) => response.json())
     .then((data) => setProducts(data));
   },[]);
@@ -27,7 +28,7 @@ const ItemListContainer = (props) => {
       
     </Header>
     <Segment attached>
-      {props.message} 
+      Articulos de categoria
     </Segment>
     <div className='ItemCardItems'>
 
@@ -54,4 +55,4 @@ const ItemListContainer = (props) => {
   );
 };
 
-export default ItemListContainer
+export default ItemCategoryListContainer

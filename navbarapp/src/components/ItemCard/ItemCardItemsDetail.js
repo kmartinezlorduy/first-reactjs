@@ -4,7 +4,7 @@ import './ItemCardItems.css';
 import ItemCounter from '../ItemCount/ItemCount'
 import { Link } from 'react-router-dom';
 
-const ItemCardItems = (props) => (
+const ItemCardItemsDetail = (props) => (
   <Card.Group className='ItemCard'>
 
     <Card>
@@ -25,9 +25,11 @@ const ItemCardItems = (props) => (
           {props.description}
         </Card.Description>
       </Card.Content>
-
       <Card.Content extra>
-        Precio: {props.price}$
+      Precio: {props.price}$
+      </Card.Content>
+      <Card.Content extra>
+        <ItemCounter stock={props.stock} reserve={props.reserve} ></ItemCounter>
       </Card.Content>
 
     </Card>
@@ -35,4 +37,4 @@ const ItemCardItems = (props) => (
   </Card.Group>
 )
 
-export default ItemCardItems
+export default ItemCardItemsDetail
