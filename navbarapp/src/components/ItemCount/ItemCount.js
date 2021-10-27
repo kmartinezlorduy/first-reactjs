@@ -33,7 +33,7 @@ const ItemCounter = ({data}) => {
        if(existe){     
         alert(`Este articulo ya se encuentra en el carrito.`)
        }else{
-        const arrayTemp = [{ id: data.id, name: data.item, price: data.price}];
+        const arrayTemp = [{ id: data.id, name: data.item, price: data.price, image: data.img, detail: data.description}];
         setItems(items.concat(arrayTemp));       
       }
      };
