@@ -1,22 +1,22 @@
 {
 "categories": [
     {
-      "id": "vg",
+      "id": "VideoJuegos",
       "text": "Video juegos",
       "description": "Video juegos",
       "image": "https://images.vexels.com/media/users/3/217118/isolated/preview/76ff9b915123c0b380f46e53c9479639-ilustracion-de-controlador-de-consola-de-oldschool.png" 
     },    
-    { "id": "pt",
+    { "id": "Portatiles",
     "text": "Portatiles",
     "description": "Equipos portatiles",
     "image": "https://pngimg.com/uploads/laptop/laptop_PNG101763.png" 
     },    
-    { "id": "cl",
+    { "id": "Celulares",
     "text": "Celulares",
     "description": "Dispositivos moviles",
     "image": "https://celuclock.com.co/wp-content/uploads/2020/12/Puro-0-3-Nude-TPU-Case-for-iPhone-12-Pro-Max-Transparent-8033830296208-16102020-01-p.jpg" 
     },    
-    { "id": "ac",
+    { "id": "Accesorios",
     "text": "Accesorios",
     "description": "Accesorios PC",
     "image": "https://eternalarcade.com/wp-content/uploads/2019/09/Mejores-accesorios-gaming.jpg" 
@@ -26,7 +26,7 @@
     "products": [{
         "id": "1",
         "item": "Playstation 5",
-        "category": "Video Juegos",        
+        "category": "VideoJuegos",        
         "description": "Consola de video juegos Playstation 5",           
         "reserve": 2,   
         "price": 600,  
@@ -35,7 +35,7 @@
     }, {
         "id": "2",
         "item": "XBox 360 Splim",
-        "category": "Video Juegos",        
+        "category": "VideoJuegos",        
         "description": "Consola de video juegos XBox 360 Slim 4GB",           
         "reserve": 3, 
         "price": 550,    
@@ -44,7 +44,7 @@
     }, {
         "id": "3",
         "item": "Nintendo Switch",
-        "category": "Video Juegos",        
+        "category": "VideoJuegos",        
         "description": "Consola de video juegos Nintendo Switch with Neon",           
         "reserve": 2,  
         "price": 400,   
@@ -53,12 +53,21 @@
     }, {
         "id": "4",
         "item": "Nintendo 64",
-        "category": "Video Juegos",        
+        "category": "VideoJuegos",        
         "description": "Consola de video juegos Nintendo 64 Classic",           
         "reserve": 9,   
         "price": 450,  
         "stock": 10,           
         "img": "https://www.hd-tecnologia.com/imagenes/articulos/2018/11/Nintendo-no-lanzar%C3%A1-una-Nintendo-64-Classic-por-ahora.jpg"
+    }, {
+        "id": "5",
+        "item": "Apple iPhone 12 Pro Max",
+        "category": "Celulares",        
+        "description": "Apple iPhone 12 Pro Max A2411 6gb 256gb",           
+        "reserve": 2,   
+        "price": 750,  
+        "stock": 5,           
+        "img": "https://http2.mlstatic.com/D_NQ_NP_932326-MCO43782307434_102020-O.webp"
     }]
 
 }

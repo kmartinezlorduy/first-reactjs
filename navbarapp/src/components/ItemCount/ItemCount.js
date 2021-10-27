@@ -1,10 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Button, Card, Image } from 'semantic-ui-react'
+import { CartContext } from '../CartContext/CartContext'; 
+//import { ArticuloContext } from '../CartContext/ArticuloContext'; 
 
-
-const ItemCounter = (props) => {
+const ItemCounter = ({data}) => {
     const [rowCount, setRowCount] = useState(parseInt(0));
-    const [stock, setStock] = useState(parseInt(props.stock));
+    
+
+    console.log({data});
+    
+    const [items, setItems] = useContext(CartContext);
+    
 
     // useEffect(() => {
     //   setTimeout(() => {
@@ -13,20 +19,72 @@ const ItemCounter = (props) => {
     //   }, 10000);
     // }, []);
 
+    function isInCart(){      
+      for(let i = 0; i < items.length; i++) {
+        if (items[i].id== data.id) {
+            return true;
+        }
+      } 
+      return false;      
+    }
+
+     const updateState = () => { 
+       let existe = isInCart();
+       if(existe){     
+        alert(`Este articulo ya se encuentra en el carrito.`)
+       }else{
+        const arrayTemp = [{ id: data.id, name: data.item, price: data.price}];
+        setItems(items.concat(arrayTemp));       
+      }
+     };
+
+     const updateStateRemove = () => {      
+      let arrayTemp = items.filter(function(item) {
+          return item.id !== data.id; 
+      });
+      setItems(arrayTemp);
+    };
+
+    const updateStateAllRemove = () => {      
+      setItems([]);
+    };    
+
+
+     function addItem(){
+       setRowCount(rowCount + 1);
+       updateState();
+     }
+
+     function removeItem(){
+      rowCount > 0 ? setRowCount(rowCount - 1) : setRowCount(0);
+      updateStateRemove();
+    }   
+    
+    function removeAllItem(){
+      setRowCount(0);
+      updateStateAllRemove();
+    }       
+
     const handleClickAddItem = () => {
-      rowCount < props.stock ? setRowCount(rowCount + 1): alert(`No hay stock disponible Agregados`);
+//      console.log('articulos '+articulos);
+       rowCount < data.stock ? addItem(): alert(`No hay stock disponible Agregados`);
+       console.log(items);
     }
 
     const handleClickRemoveItem = () => {
-      rowCount > 0 ? setRowCount(rowCount - 1) : alert(`No es posible quitar mas de carrito`)
+      items.length > 0 ? removeItem() : alert(`No es posible quitar mas de carrito`);
     }
+
+    const handleClickAllRemoveItem = () => {
+      items.length > 0 ? removeAllItem() : alert(`Ya esta vacio el carrito`);
+    }    
 
 
     return (
       <div>
       <div>
         <p>Agregados a carrito {rowCount}</p>
-        <p>Stock inicial: {props.stock}</p>
+        <p>Stock inicial: {data.stock}</p>
       </div>
       <div className='ui three buttons'>
         
@@ -36,8 +94,8 @@ const ItemCounter = (props) => {
         <Button basic color='red' onClick={handleClickRemoveItem}>
         Quitar de carrito
         </Button>
-        <Button basic color='blue'>
-        Agregar a favoritos
+        <Button basic color='blue' onClick={handleClickAllRemoveItem}>
+        Vaciar carrito
         </Button>        
       </div>
       </div>

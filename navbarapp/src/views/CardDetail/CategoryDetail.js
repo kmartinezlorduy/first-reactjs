@@ -1,10 +1,11 @@
 import React from 'react'
 import ItemCategoryListContainer from '../../components/ItemListContainer/ItemCategoryListContainer';
 
-const CategoryDetail = () => {
+const CategoryDetail = (props) => {
+    console.log(props.match.params.id);
     return (
         <div>
-            <ItemCategoryListContainer message='Bienvenidos, a continuación nuestra lista de productos' /> 
+            <ItemCategoryListContainer idCategory={props.match.params.id}  message='Bienvenidos, a continuación nuestra lista de productos' /> 
         </div>
     )
 }

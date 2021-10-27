@@ -1,11 +1,17 @@
-import React from 'react'
-import { Header, Icon } from 'semantic-ui-react'
+import React, {useContext} from 'react';
+import { Header, Icon } from 'semantic-ui-react';
+import { CartContext } from '../CartContext/CartContext';
 
-const CartWidget = () => (
+
+const CartWidget = () => {
+  const [items, setItems] = useContext(CartContext);
+  
+  return (
   <Header as='h4'>
     <Icon name='shopping cart' />
-    <Header.Content>Carrito de compras</Header.Content>
+    <Header.Content>Carrito de compras, Total articulos: {items.length}</Header.Content>
   </Header>
-)
+  );
+};
 
 export default CartWidget

@@ -8,18 +8,20 @@ import {Link} from 'react-router-dom';
 
 
 
-const ItemCategoryListContainer = ({ match }) => {
+const ItemCategoryListContainer = (props) => {
 
   const [products, setProducts] = useState([]);
 
-  //let categoryId = match.params.id;
+  let idCategory = props.idCategory;
   
-
+  
+ 
   useEffect(() => {
     fetch(`http://localhost:3001/products`)
     .then((response) => response.json())
-    .then((data) => setProducts(data));
-  },[]);
+    .then((data) => setProducts(data.filter(data => idCategory==data.category)));
+  },[idCategory]);
+  
 
  return (
   <div>

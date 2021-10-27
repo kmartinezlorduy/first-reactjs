@@ -1,40 +1,46 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Button, Card, Image } from 'semantic-ui-react'
 import './ItemCardItems.css';
 import ItemCounter from '../ItemCount/ItemCount'
 import { Link } from 'react-router-dom';
+import { ArticuloProvider } from '../CartContext/ArticuloContext'; 
 
-const ItemCardItemsDetail = (props) => (
+const ItemCardItemsDetail = ({product}) => {
+
+  
+  
+  return (
   <Card.Group className='ItemCard'>
 
     <Card>
 
       <Card.Content>
-        <Link to={`/detail/${props.id}`} >
+        <Link to={`/detail/${product.id}`} >
           <Image
             floated='right'
             size='mini'
-            src={props.img}
+            src={product.img}
           />
         </Link>
 
-        <Card.Header><Link to={`/detail/${props.id}`} >{props.item}</Link></Card.Header>
+        <Card.Header><Link to={`/detail/${product.id}`} >{product.item}</Link></Card.Header>
 
-        <Card.Meta>{props.category}</Card.Meta>
+        <Card.Meta>{product.category}</Card.Meta>
         <Card.Description>
-          {props.description}
+          {product.description}
         </Card.Description>
       </Card.Content>
       <Card.Content extra>
-      Precio: {props.price}$
+      Precio: {product.price}$
       </Card.Content>
       <Card.Content extra>
-        <ItemCounter stock={props.stock} reserve={props.reserve} ></ItemCounter>
+          <ItemCounter data={product} />
       </Card.Content>
 
     </Card>
 
   </Card.Group>
-)
+  );
+};
 
 export default ItemCardItemsDetail
