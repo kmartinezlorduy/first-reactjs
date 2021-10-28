@@ -1,13 +1,16 @@
-import React from 'react'
-import ItemCategoryListContainer from '../../components/ItemListContainer/ItemCategoryListContainer';
+import React from 'react';
+import ItemCategoryListContainer from
+    '../../components/ItemListContainer/ItemCategoryListContainer';
 
 const CategoryDetail = (props) => {
     console.log(props.match.params.id);
     return (
         <div>
-            <ItemCategoryListContainer idCategory={props.match.params.id}  message='Bienvenidos, a continuación nuestra lista de productos' /> 
+            <ItemCategoryListContainer idCategory={props.match.params.id}
+                message='Bienvenido, a continuación nuestra lista de productos'>
+            </ItemCategoryListContainer>
         </div>
-    )
-}
+    );
+};
 
-export default CategoryDetail
+export default CategoryDetail;

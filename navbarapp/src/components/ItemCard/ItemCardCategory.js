@@ -1,7 +1,6 @@
-import React from 'react'
-import { Button, Card, Image } from 'semantic-ui-react'
+import React from 'react';
+import { Card, Image } from 'semantic-ui-react';
 import './ItemCardItems.css';
-import ItemCounter from '../ItemCount/ItemCount'
 import { Link } from 'react-router-dom';
 
 const ItemCardCategory = (props) => (
@@ -18,7 +17,9 @@ const ItemCardCategory = (props) => (
           />
         </Link>
 
-        <Card.Header><Link to={`/categoria/${props.id}`} >{props.text}</Link></Card.Header>
+        <Card.Header><Link to={`/categoria/${props.id}`} >
+          {props.text}
+        </Link></Card.Header>
 
         <Card.Meta>{props.category}</Card.Meta>
         <Card.Description>
@@ -30,6 +31,6 @@ const ItemCardCategory = (props) => (
     </Card>
 
   </Card.Group>
-)
+);
 
-export default ItemCardCategory
+export default ItemCardCategory;
