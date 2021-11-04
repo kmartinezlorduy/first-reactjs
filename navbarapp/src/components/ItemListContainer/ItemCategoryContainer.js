@@ -3,15 +3,30 @@ import ItemCardCategory from '../ItemCard/ItemCardCategory';
 import '../ItemCard/ItemCardItems.css';
 import { Header, Segment } from 'semantic-ui-react';
 
+import { collection, getDocs } from 'firebase/firestore';
+import { db } from '../../firebase';
+
 
 const ItemCategoryContainer = (props) => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3001/categories')
-      .then((response) => response.json())
-      .then((data) => setCategories(data));
+    const requestData = async () => {
+      const docs = [];
+      const categoriesData = await getDocs(collection(db, 'categories'));
+      categoriesData.forEach((document) => {
+        docs.push({ ...document.data(), idGen: document.id });
+      });
+      setCategories(docs);
+    };
+    requestData();
   }, []);
+
+  /*   useEffect(() => {
+      fetch('http://localhost:3001/categories')
+        .then((response) => response.json())
+        .then((data) => setCategories(data));
+    }, []); */
 
   return (
     <div>

@@ -2,17 +2,29 @@ import React, { useState, useEffect } from 'react';
 import ItemCardItems from '../ItemCard/ItemCardItems';
 import '../ItemCard/ItemCardItems.css';
 import { Header, Segment } from 'semantic-ui-react';
-
+import { collection, getDocs } from 'firebase/firestore';
+import { db } from '../../firebase';
 
 const ItemListContainer = (props) => {
   const [products, setProducts] = useState([]);
 
-
   useEffect(() => {
+    const requestData = async () => {
+      const docs = [];
+      const productsData = await getDocs(collection(db, 'products'));
+      productsData.forEach((document) => {
+        docs.push({ ...document.data(), idGen: document.id });
+      });
+      setProducts(docs);
+    };
+    requestData();
+  }, []);
+
+  /* useEffect(() => {
     fetch('http://localhost:3001/products')
       .then((response) => response.json())
       .then((data) => setProducts(data));
-  }, []);
+  }, []); */
 
   return (
     <div>
