@@ -1,0 +1,14 @@
+.formStyle {
+  display: flex;
+  align-content: center;
+  text-align: left;
+  margin-left: 5%;
+  float: left;
+  width: 700px;
+}
+
+.tableStyle {
+  display: flex;
+  margin-left: 5%;
+  float: left;
+}

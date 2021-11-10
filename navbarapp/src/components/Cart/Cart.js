@@ -1,7 +1,9 @@
 import React, { useContext } from 'react';
 import { CartContext } from '../CartContext/CartContext';
 import { Header, Image, Table } from 'semantic-ui-react';
+import FormCart from '../Cart/FormCart';
 import { Link } from 'react-router-dom';
+import './FormStyle.css';
 
 const Cart = () => {
   const [items, setItems] = useContext(CartContext);
@@ -15,8 +17,8 @@ const Cart = () => {
   }
 
   return (
-    items.length > 0 ?
-      <Table basic='very' celled collapsing>
+    (items.length > 0 ?
+      (<div className="tableStyle"><Table basic='very' celled collapsing>
         <Table.Body>
           {items.map((item) => {
             return (
@@ -41,12 +43,15 @@ const Cart = () => {
               </div>
             );
           })}
-
-
         </Table.Body>
         <h2>Total a pagar: ${parseInt(totalizar())}</h2>
-      </Table> :
-      <h3>No hay articulos comprados</h3>
+
+      </Table>
+        <div className="formStyle">
+          <FormCart total={parseInt(totalizar())} ></FormCart></div></div>) :
+      <h3>No hay articulos comprados</h3>)
+
+
   );
 };
 
