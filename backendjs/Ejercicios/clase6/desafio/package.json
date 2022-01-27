@@ -1,0 +1,12 @@
+{
+  "name": "desafio",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Desafio Servidor con Express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "klorduy",
+  "license": "ISC"
+}
